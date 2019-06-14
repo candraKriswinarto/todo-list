@@ -1,0 +1,236 @@
+$colors: (
+    primary: #5A89FF,
+    text: #9694A0,
+    title: #3C3B4E,
+    day: #B9B9B9
+);
+
+@function setColor($color) {
+    @return map-get($colors, $color);
+}
+
+@mixin ease {
+    transition: all 0.2s ease;    
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    ul {
+        list-style: none;
+    }
+}
+
+body {
+    font-family: sans-serif;
+    height: 100vh;
+}
+
+.wrapper {
+    max-width: 450px;
+    margin: 0 auto;
+    height: 100%;
+    padding: 2rem;
+    position: relative;
+
+    // Add button {
+    #add {
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%);
+        bottom: 5rem;
+        color: #fff;
+        font-size: 1.2rem;
+        height: 60px;
+        width: 60px;
+        border-radius: 30px;
+        border: none;
+        background: setColor(primary);
+        outline: none;
+        cursor: pointer;
+        transition: all 0.2s ease;
+
+        &:hover {
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
+        }
+    }
+
+    .modal-wrapper {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #fff;
+        display: none;
+
+        &.modal-wrapper-toggle {
+            display: block;
+
+        }
+
+        .wrap {
+            padding: 2.5rem;
+            width: 100%;
+            top: 0;
+            left: 0;
+            position: absolute;
+            color: setColor(title);
+
+
+            .close {
+                color: setColor(title);
+                cursor: pointer;
+                font-size: 2rem;
+                margin-bottom: 2rem;
+            }
+
+            input {
+                height: 4.5rem;
+                width: 100%;
+                text-indent: 1rem;
+                font-size: 1.5rem;
+                margin-bottom: 2rem;
+                border: none;
+                outline: none;
+
+                &::placeholder {
+                    font-size: 1.5rem;
+                }
+            }
+
+            .set {
+                display: flex;
+                margin-top: 2.5rem;
+                font-weight: bold;
+
+                p {
+                    margin-left: 2rem;
+                }
+            }
+
+            .notes {
+                margin: 3rem 0;
+                font-weight: bold;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+
+                .icon {
+                    display: flex;
+                    color: setColor(primary);
+
+                    p {
+                        margin-left: 0.5rem;
+                    }
+                }
+            }
+
+
+
+            #add-list {
+                background: setColor(primary);
+                border: none;
+                width: 100%;
+                padding: .7rem;
+                border-radius: 5px;
+                font-size: 1.3rem;
+                font-weight: bold;
+                color: #fff;
+                cursor: pointer;
+            }
+        }
+
+    }
+}
+
+header {
+
+    .day {
+        color: setColor(day);
+    }
+
+    .title {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        margin: .5rem 0;
+        padding: .5rem 0 1rem 0;
+        border-bottom: 1.5px solid rgba(65, 63, 63, 0.5);
+
+        h2 {
+            color: setColor(title);
+            font-size: 2rem;
+        }
+    }
+
+    .search-btn {
+        
+        input {
+            border: none;
+            outline: none;
+            height: 1.5rem;
+            box-shadow: 0px 1px 1px rgba(63, 64, 65, 0.5);
+            display: none;
+        }
+
+        .input-show {
+            display: inline;
+            @include ease;
+        }
+
+        cursor: pointer;
+        color: setColor(title);
+    }
+
+}
+
+.container {
+    margin-top: 2rem;
+
+    ul {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 0.5rem;
+        border-radius: 10px;
+        padding: 1rem .5rem;
+        transition: all 0.2s ease;
+
+        &:hover {
+            background: rgb(238, 232, 232);
+        }
+
+        li {
+            color: setColor(text);
+            font-weight: bold;
+        }
+
+        .buttons {
+            display: flex;
+
+            div {
+                color: setColor(text);
+                cursor: pointer;
+                @include ease;
+            }
+
+            .remove:hover {
+                color: #e85656;
+            }
+
+            .completed {
+                margin-left: 1.5rem;
+                &:hover {
+                    color: #25b99a;
+                }
+            }
+        }
+    }
+
+
+}

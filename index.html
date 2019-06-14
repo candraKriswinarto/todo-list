@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<script src="https://kit.fontawesome.com/7414e22221.js"></script>
+	<link rel="stylesheet" href="css/style.css">
+	<title>My Todo List</title>
+</head>
+<body>
+	<div class="wrapper">
+		<header>
+			<div class="day">
+				<p>Friday, May 11</p>
+			</div>
+			<div class="title">
+				<h2>To-Do List</h2>
+				<div class="search-btn">
+					<input type="text" placeholder="Search for..." id="input">
+					<i class="search fas fa-search"></i>
+				</div>
+			</div>
+		</header>
+		<div class="container">
+			<ul class="todo">
+				<li>Set up Office</li>
+				<div class="buttons">
+					<div class="remove">
+						<i class="far fa-trash-alt"></i>
+					</div>
+					<div class="completed">
+						<i class="fas fa-check-circle"></i>
+					</div>
+				</div>
+			</ul>
+	
+			<ul class="complete">
+				<li>Set up Office</li>
+				<div class="buttons">
+					<div class="remove">
+						<i class="far fa-trash-alt"></i>
+					</div>
+					<div class="completed">
+						<i class="fas fa-check-circle"></i>
+					</div>
+				</div>
+			</ul>
+		</div>
+
+		<button id="add"><i class="fas fa-plus"></i></button>
+
+
+		<!-- Modal Input -->
+		<div class="modal-wrapper">
+			<div class="wrap">
+				<div class="close">
+					<i class="fas fa-times"></i>
+				</div>
+				<input type="text" placeholder="Write task here">
+				<div class="set">
+					<i class="far fa-clock"></i>
+					<p>10:00 AM</p>
+				</div>
+				<div class="set">
+					<i class="far fa-bell"></i>
+					<p>15 min before</p>
+				</div>
+				<div class="set">
+					<i class="fas fa-tag"></i>
+					<p>Category</p>
+				</div>
+				<div class="notes">
+					<p>Notes</p>
+					<div class="icon">
+						<i class="fas fa-thumbtack"></i>
+						<p>Priority</p>
+					</div>
+				</div>
+				<button id="add-list">Add</button>
+			</div>
+		</div>
+	</div>
+
+	<script src="js/main.js"></script>
+</body>
+</html>
