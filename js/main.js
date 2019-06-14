@@ -2,6 +2,50 @@
 let modal = document.querySelector('.modal-wrapper');
 
 
+// Function to close the modal
+function closeModal() {
+    modal.classList.remove('modal-wrapper-toggle');
+}
+
+// Function add TODO list
+function addTodo(text) {
+    // Create Element list
+    let wrapTodo = document.querySelector('.wrap-todo');
+
+    let list = document.createElement('ul');
+    list.classList.add('todo');
+
+    let item = document.createElement('li');
+    item.innerHTML = text;
+
+    let buttons = document.createElement('div');
+    buttons.classList.add('buttons');
+
+    let remove = document.createElement('div');
+    remove.classList.add('remove');
+    
+    let removeIcon = document.createElement('i');
+    removeIcon.classList.add('far');
+    removeIcon.classList.add('fa-trash-alt');
+
+    // Add event for remove the item
+
+    let completed = document.createElement('div');
+    completed.classList.add('completed');
+    
+    let completedIcon = document.createElement('i');
+    completedIcon.classList.add('fas');
+    completedIcon.classList.add('fa-check-circle');
+
+    completed.appendChild(completedIcon);    
+    remove.appendChild(removeIcon);
+    buttons.appendChild(remove);
+    buttons.appendChild(completed);
+    list.appendChild(item);
+    list.appendChild(buttons);
+    wrapTodo.appendChild(list);
+}
+
 // User click the search button
 const search = document.querySelector('.search');
 search.addEventListener('click', function() {
@@ -22,6 +66,18 @@ document.getElementById('add').addEventListener('click', function() {
 });
 
 // User click the close button in modal >> close the modal
-document.querySelector('.close').addEventListener('click', function() {
-    modal.classList.remove('modal-wrapper-toggle');
+document.querySelector('.close').addEventListener('click', closeModal);
+
+// User click the add-list button >> add list todo
+document.getElementById('add-list').addEventListener('click', function() {
+    let value = document.getElementById('list').value;
+
+    if(value) {
+        console.log(value);
+        addTodo(value);
+        document.getElementById('list').value = '';        
+
+        closeModal();
+    }
 });
+
