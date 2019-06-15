@@ -196,46 +196,60 @@ header {
 .container {
     margin-top: 2rem;
 
-    ul {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-        margin-top: 0.5rem;
-        border-radius: 10px;
-        padding: 1rem .5rem;
-        transition: all 0.2s ease;
+    .wrap-todo {
 
-        &:hover {
-            background: rgb(238, 232, 232);
-        }
-
-        li {
-            color: setColor(text);
-            font-weight: bold;
-        }
-
-        .buttons {
-            display: flex;
-
-            div {
+        &#completed ul .buttons .completed {
+            color: #25b99a;
+    
+            &:hover {
                 color: setColor(text);
-                cursor: pointer;
-                @include ease;
             }
+        }
 
-            .remove:hover {
-                color: #e85656;
+        ul {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 0.5rem;
+            border-radius: 10px;
+            padding: 1rem .5rem;
+            transition: all 0.2s ease;
+    
+            &:hover {
+                background: rgb(238, 232, 232);
             }
-
-            .completed {
-                margin-left: 1.5rem;
-                &:hover {
-                    color: #25b99a;
+    
+            li {
+                color: setColor(text);
+                font-weight: bold;
+            }
+    
+            .buttons {
+                display: flex;
+    
+                div {
+                    color: setColor(text);
+                    cursor: pointer;
+                    @include ease;
+                }
+    
+                .remove:hover {
+                    color: #e85656;
+                }
+    
+                .completed {
+                    margin-left: 1.5rem;
+                    &:hover {
+                        color: #25b99a;
+                    }
                 }
             }
         }
     }
 
+    
+
+    
 
 }

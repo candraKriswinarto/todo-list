@@ -148,7 +148,13 @@ header .search-btn .input-show {
 .container {
   margin-top: 2rem;
 }
-.container ul {
+.container .wrap-todo#completed ul .buttons .completed {
+  color: #25b99a;
+}
+.container .wrap-todo#completed ul .buttons .completed:hover {
+  color: #9694A0;
+}
+.container .wrap-todo ul {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -158,28 +164,28 @@ header .search-btn .input-show {
   padding: 1rem 0.5rem;
   transition: all 0.2s ease;
 }
-.container ul:hover {
+.container .wrap-todo ul:hover {
   background: #eee8e8;
 }
-.container ul li {
+.container .wrap-todo ul li {
   color: #9694A0;
   font-weight: bold;
 }
-.container ul .buttons {
+.container .wrap-todo ul .buttons {
   display: flex;
 }
-.container ul .buttons div {
+.container .wrap-todo ul .buttons div {
   color: #9694A0;
   cursor: pointer;
   transition: all 0.2s ease;
 }
-.container ul .buttons .remove:hover {
+.container .wrap-todo ul .buttons .remove:hover {
   color: #e85656;
 }
-.container ul .buttons .completed {
+.container .wrap-todo ul .buttons .completed {
   margin-left: 1.5rem;
 }
-.container ul .buttons .completed:hover {
+.container .wrap-todo ul .buttons .completed:hover {
   color: #25b99a;
 }
 

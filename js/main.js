@@ -13,7 +13,7 @@ function addTodo(text) {
     let wrapTodo = document.querySelector('.wrap-todo');
 
     let list = document.createElement('ul');
-    list.classList.add('todo');
+    // list.classList.add('todo');
 
     let item = document.createElement('li');
     item.innerHTML = text;
@@ -23,15 +23,19 @@ function addTodo(text) {
 
     let remove = document.createElement('div');
     remove.classList.add('remove');
+
+    // Add event for remove the item
+    remove.addEventListener('click', removeItem);
     
     let removeIcon = document.createElement('i');
     removeIcon.classList.add('far');
-    removeIcon.classList.add('fa-trash-alt');
-
-    // Add event for remove the item
+    removeIcon.classList.add('fa-trash-alt');    
 
     let completed = document.createElement('div');
     completed.classList.add('completed');
+
+    // Add Event for completed the item
+    completed.addEventListener('click', completedItem);
     
     let completedIcon = document.createElement('i');
     completedIcon.classList.add('fas');
@@ -44,6 +48,33 @@ function addTodo(text) {
     list.appendChild(item);
     list.appendChild(buttons);
     wrapTodo.appendChild(list);
+}
+
+// Function for remove the items
+function removeItem() {
+    let list = this.parentNode.parentNode;
+    let parent = list.parentNode;
+
+    parent.removeChild(list);
+}
+
+// Function to completed the items
+function completedItem() {
+    let list = this.parentNode.parentNode;
+    let parent = list.parentNode;
+    let id = parent.id;
+
+    let target;
+    if (id === 'todo') {
+        target = document.getElementById('completed');
+    } else {
+        target = document.getElementById('todo');
+    }
+
+    console.log(parent);
+
+    parent.removeChild(list);
+    target.insertBefore(list, target.childNodes[0]);
 }
 
 // User click the search button
