@@ -154,6 +154,21 @@ header .search-btn .input-show {
 .container .wrap-todo#completed ul .buttons .completed:hover {
   color: #9694A0;
 }
+.container .wrap-todo#completed:not(:empty) {
+  padding: 60px 0 0 0;
+  opacity: 0.4;
+  position: relative;
+}
+.container .wrap-todo#completed:not(:empty):before {
+  content: "";
+  position: absolute;
+  width: 150px;
+  height: 1px;
+  top: 30px;
+  left: 50%;
+  transform: translate(-50%);
+  background: #9694A0;
+}
 .container .wrap-todo ul {
   display: flex;
   flex-direction: row;

@@ -47,7 +47,7 @@ function addTodo(text) {
     buttons.appendChild(completed);
     list.appendChild(item);
     list.appendChild(buttons);
-    wrapTodo.appendChild(list);
+    wrapTodo.insertBefore(list, wrapTodo.childNodes[0]);
 }
 
 // Function for remove the items
