@@ -13,7 +13,7 @@ function date() {
 
     document.querySelector('.day p').innerHTML = dayNow;
 }
-setInterval(date, 1000 * 60 * 60 * 24);
+setInterval(date, 1000);
 
 // Get Element
 let modal = document.querySelector('.modal-wrapper');
