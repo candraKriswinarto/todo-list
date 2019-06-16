@@ -1,6 +1,22 @@
+// Time
+function date() {
+    const fullDate = new Date();
+
+    const days = ['sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+
+    let day = days[fullDate.getDay()];
+    let month = months[fullDate.getMonth()];
+    let date = fullDate.getDate();
+
+    let dayNow = `${day}, ${month} ${date}`;
+
+    document.querySelector('.day p').innerHTML = dayNow;
+}
+setInterval(date, 1000 * 60 * 60 * 24);
+
 // Get Element
 let modal = document.querySelector('.modal-wrapper');
-
 
 // Function to close the modal
 function closeModal() {
