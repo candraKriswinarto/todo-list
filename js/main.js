@@ -115,8 +115,7 @@ document.getElementById('add').addEventListener('click', function() {
 // User click the close button in modal >> close the modal
 document.querySelector('.close').addEventListener('click', closeModal);
 
-// User click the add-list button >> add list todo
-document.getElementById('add-list').addEventListener('click', function() {
+const addToDo = () => {
     let value = document.getElementById('list').value;
 
     if(value) {
@@ -126,5 +125,16 @@ document.getElementById('add-list').addEventListener('click', function() {
 
         closeModal();
     }
+}
+
+// User click the add-list button >> add list todo
+document.getElementById('add-list').addEventListener('click', addToDo);
+
+// User click the enter key
+document.addEventListener('keyup', function(event) {
+    if(event.keyCode == 13) {
+        addToDo();
+    }
 });
+
 
